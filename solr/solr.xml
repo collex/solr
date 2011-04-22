@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<solr persistent="true">
+  <cores adminPath="/admin/cores">
+    <core name="archive_bierce" instanceDir="./"/>
+    <core name="archive_rossetti" instanceDir="./"/>
+    <core name="archive_rc_editions" instanceDir="./"/>
+    <core name="archive_amdeveryday" instanceDir="./"/>
+    <core name="resources" instanceDir="./"/>
+  </cores>
+</solr>
