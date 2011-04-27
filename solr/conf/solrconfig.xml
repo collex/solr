@@ -130,8 +130,8 @@
       -->
     <!-- <maxBufferedDocs>1000</maxBufferedDocs> -->
 
-	 <!-- ADD THIS TO SEARCH FULL DOC CONTENT
-    <maxFieldLength>2147483647</maxFieldLength> -->
+	 <!-- ADD THIS TO SEARCH FULL DOC CONTENT -->
+    <maxFieldLength>2147483647</maxFieldLength> 
     <writeLockTimeout>1000</writeLockTimeout>
     <commitLockTimeout>10000</commitLockTimeout>
 
@@ -200,8 +200,8 @@
     <useCompoundFile>false</useCompoundFile>
     <ramBufferSizeMB>32</ramBufferSizeMB>
     <mergeFactor>10</mergeFactor>
-	 <!-- ADD THIS TO SEARCH FULL DOC CONTENT
-    <maxFieldLength>2147483647</maxFieldLength> -->
+	 <!-- ADD THIS TO SEARCH FULL DOC CONTENT -->
+    <maxFieldLength>2147483647</maxFieldLength> 
 
     <!-- Unlock On Startup
 
