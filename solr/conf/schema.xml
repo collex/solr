@@ -477,7 +477,8 @@
     <field name="text" type="textgen" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true" />
     <field name="text_url" type="string" indexed="false" stored="true" multiValued="true"/>
     <field name="thumbnail" type="string" indexed="false" stored="true"/>
-    <field name="title" type="textgen" indexed="true" stored="true"/>
+    <!-- field name="title" type="textgen" indexed="true" stored="true"/ -->
+    <field name="title" type="textgen" indexed="true" stored="true" multiValued="true"/>
     <field name="url" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="source_xml" type="string" indexed="true" stored="true"/>
     <field name="source_html" type="string" indexed="true" stored="true"/>
