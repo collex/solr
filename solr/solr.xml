@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <solr persistent="true">
   <cores adminPath="/admin/cores">
-    <core name="archive_bierce" instanceDir="./"/>
-    <core name="archive_rossetti" instanceDir="./"/>
-    <core name="archive_rc_editions" instanceDir="./"/>
-    <core name="archive_amdeveryday" instanceDir="./"/>
+    <core name="UserContent" instanceDir="./" schema="schema_user.xml"/>
+    <core name="18thConnectLocalContent" instanceDir="./" schema="schema_user.xml"/>
+    <core name="NINESLocalContent" instanceDir="./" schema="schema_user.xml"/>
+    <core name="test18thConnectLocalContent" instanceDir="./" schema="schema_user.xml"/>
+    <core name="testNINESLocalContent" instanceDir="./" schema="schema_user.xml"/>
+    <core name="testResources" instanceDir="./"/>
     <core name="resources" instanceDir="./"/>
   </cores>
 </solr>
