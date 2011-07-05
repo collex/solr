@@ -1,70 +1,51 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-JETTY
-=====
+Solr example configuration
+--------------------------
 
-The Jetty project is a 100% Java HTTP Server, HTTP Client
-and Servlet Container.
-
-
-The Jetty @ eclipse project is based on the Jetty project at codehaus
-
-  http://jetty.codehaus.org
-
-Ongoing development is now at the eclipse foundation
-
-  http://www.eclipse.org/jetty/
-
-
-Jetty @ eclipse is open source and is dual licensed using the apache 2.0 and
-eclipse public license 1.0.   You may choose either license when distributing
-jetty.
-
-
-
-BUILDING JETTY
-==============
-
-Jetty uses maven 2 as its build system.  Maven will fetch
-the dependancies, build the server and assemble a runnable
-version:
-
-  mvn install
-
-
-
-RUNNING JETTY
-=============
-
-The run directory is either the top-level of a binary release
-or jetty-distribution/target/assembly-prep directory when built from
-source.
-
-To run with the default options:
+To run this example configuration, use 
 
   java -jar start.jar
 
-To see the available options and the default arguments
-provided by the start.ini file:
+in this directory, and when Solr is started connect to 
 
-  java -jar start.jar --help
+  http://localhost:8983/solr/admin/
 
-To run with extra configuration file(s) appended, eg SSL
+To add documents to the index, use the post.sh script in the exampledocs
+subdirectory (while Solr is running), for example:
 
-  java -jar start.jar etc/jetty-ssl.xml
+  cd exampledocs
+  sh post.sh *.xml
 
-To run with properties 
+See also README.txt in the solr subdirectory, and check
+http://wiki.apache.org/solr/SolrResources for a list of tutorials and
+introductory articles.
 
-  java -jar start.jar jetty.port=8081
+NOTE: This Solr example server references certain Solr jars outside of
+this server directory for non-core modules with <lib> statements in
+solrconfig.xml.  If you make a copy of this example server and wish
+to use the ExtractingRequestHandler (SolrCell), DataImportHandler (DIH),
+UIMA, the clustering component, or other modules in "contrib",
+you will need to copy the required jars into solr/lib or update the paths to
+the jars in your solrconfig.xml.
 
-To run with extra configuration file(s) prepended, eg logging & jmx
+By default, start.jar starts Solr in Jetty using the default solr home
+directory of "./solr/" -- To run other example configurations, you can
+speciy the solr.solr.home system property when starting jetty...
 
-  java -jar start.jar --pre=etc/jetty-logging.xml --pre=etc/jetty-jmx.xml 
-
-To run without the args from start.ini 
-
-  java -jar start.jar --ini OPTIONS=Server,websocket etc/jetty.xml etc/jetty-deploy.xml etc/jetty-ssl.xml
-
-to list the know OPTIONS:
-
-  java -jar start.jar --list-options
+  java -Dsolr.solr.home=multicore -jar start.jar
+  java -Dsolr.solr.home=example-DIH -jar start.jar
 
