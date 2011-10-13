@@ -8,5 +8,9 @@
     <core name="testNINESLocalContent" instanceDir="./" schema="schema_user.xml"/>
     <core name="testResources" instanceDir="./"/>
     <core name="resources" instanceDir="./"/>
+    <core name="archive_rossetti" instanceDir="./"/>
+    <core name="archive_cali" instanceDir="./"/>
+    <core name="archive_bancroft" instanceDir="./"/>
+    <core name="archive_ufldloc" instanceDir="./"/>
   </cores>
 </solr>
