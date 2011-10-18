@@ -537,6 +537,12 @@
 	 <field name="content" type="text_general" indexed="true" stored="false" multiValued="true"/>
 	 <field name="content_ascii" type="text_general_ascii" indexed="true" stored="false" multiValued="true"/>
 
+	<!-- fields for ascii search on specific fields -->
+	 <field name="title_ascii" type="text_general_ascii" indexed="true" stored="false"/>
+	 <field name="author_ascii" type="text_general_ascii" indexed="true" stored="false" multiValued="true"/>
+	 <field name="editor_ascii" type="text_general_ascii" indexed="true" stored="false" multiValued="true"/>
+	 <field name="publisher_ascii" type="text_general_ascii" indexed="true" stored="false" multiValued="true"/>
+
 	 <!-- TODO: delete this after reindex -->
 	 <field name="batch" type="string" indexed="false" stored="false"/>
 
@@ -617,6 +623,11 @@
 	<copyField source="source" dest="content_ascii"/>
 	<copyField source="role_*" dest="content_ascii"/>
 	<copyField source="text" dest="content_ascii"/>
+
+	<copyField source="title" dest="title_ascii"/>
+	<copyField source="author" dest="author_ascii"/>
+	<copyField source="editor" dest="editor_ascii"/>
+	<copyField source="publisher" dest="publisher_ascii"/>
  <!-- Similarity is the scoring routine for each document vs. a query.
       A custom similarity may be specified here, but the default is fine
       for most applications.  -->
