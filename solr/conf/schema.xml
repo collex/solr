@@ -625,9 +625,9 @@
 	<copyField source="text" dest="content_ascii"/>
 
 	<copyField source="title" dest="title_ascii"/>
-	<copyField source="author" dest="author_ascii"/>
-	<copyField source="editor" dest="editor_ascii"/>
-	<copyField source="publisher" dest="publisher_ascii"/>
+	<copyField source="role_AUT" dest="author_ascii"/>
+	<copyField source="role_EDT" dest="editor_ascii"/>
+	<copyField source="role_PBL" dest="publisher_ascii"/>
  <!-- Similarity is the scoring routine for each document vs. a query.
       A custom similarity may be specified here, but the default is fine
       for most applications.  -->
