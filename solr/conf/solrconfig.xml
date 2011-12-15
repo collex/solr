@@ -552,7 +552,8 @@
       -->
     <listener event="newSearcher" class="solr.QuerySenderListener">
       <arr name="queries">
-        <!--
+		  <!--<lst><str name="q">solr</str><str name="sort">title_sort asc, name_sort asc, date asc</str></lst>
+
            <lst><str name="q">solr</str><str name="sort">price asc</str></lst>
            <lst><str name="q">rocks</str><str name="sort">weight asc</str></lst>
           -->
@@ -560,9 +561,10 @@
     </listener>
     <listener event="firstSearcher" class="solr.QuerySenderListener">
       <arr name="queries">
-        <lst>
-          <str name="q">static firstSearcher warming in solrconfig.xml</str>
-        </lst>
+		<!--  <lst><str name="q">solr</str><str name="sort">title_sort asc, name_sort asc, date asc</str></lst>
+        <lst>-->
+          <!--<str name="q">static firstSearcher warming in solrconfig.xml</str>-->
+        <!--</lst>-->
       </arr>
     </listener>
 
