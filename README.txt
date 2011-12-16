@@ -43,6 +43,10 @@ The documents are added to the solr index by converting RDF documents using the 
 The About section of "collex" and the News section of "collex" are two separate WordPress installations. The
 recommended theme to use is in the "collex_wordpress_theme" project.
 
+The "typewright" project can be attached to a "collex" instance if you wish by setting it up in the site.yml file
+of "collex". The "typewright" project is a webservice that keeps the information about all the typewright-enabled
+documents. The actual web presence of typewright is in the "collex" project under subfolders named typewright.
+
 --------------------------------------
 
 To run on the production machine, you will probably want to create a service, something like
