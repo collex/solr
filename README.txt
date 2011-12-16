@@ -13,39 +13,88 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-Solr example configuration
+This provides and sets up the solr instance required for Collex Catalog.
 --------------------------
 
-To run this example configuration, use 
+This is mostly the Apache Solr project, but it is set up the way it needs to be for the
+Collex Catalog to work. For instance, this version of solr has been tested with the Catalog
+and with the current solr index. The configuration files are written specifically for the Collex
+project. And the JVM is set up to be optimized to run on Collex's server.
 
-  java -jar start.jar
+--------------------------------------
+Collex architecture
 
-in this directory, and when Solr is started connect to 
+Collex is a complex project made up of a number of subprojects that all have to be in place
+for it to work. Most users will probably just need to set up the main Collex piece and point it at
+the existing Catalog. If that is all you want to do, then you don't need to understand the following
+architecture and you don't need to download the "solr" or "catalog" projects.
 
-  http://localhost:8983/solr/admin/
+When Collex is deployed, it is branded with the name of a particular "Federation", like NINES or 18thConnect.
+The website that the end user goes to will look like that federation, but the code behind it is the "collex"
+project here.
 
-To add documents to the index, use the post.sh script in the exampledocs
-subdirectory (while Solr is running), for example:
+When a search is done from "collex", the request is made to the "catalog" project, which is a web service
+that exposes all the documents that have been stored.
 
-  cd exampledocs
-  sh post.sh *.xml
+The "catalog" webservice processes the request and forms the correct call to the "solr" webservice.
 
-See also README.txt in the solr subdirectory, and check
-http://wiki.apache.org/solr/SolrResources for a list of tutorials and
-introductory articles.
+The documents are added to the solr index by converting RDF documents using the project "rdf-indexer".
 
-NOTE: This Solr example server references certain Solr jars outside of
-this server directory for non-core modules with <lib> statements in
-solrconfig.xml.  If you make a copy of this example server and wish
-to use the ExtractingRequestHandler (SolrCell), DataImportHandler (DIH),
-UIMA, the clustering component, or other modules in "contrib",
-you will need to copy the required jars into solr/lib or update the paths to
-the jars in your solrconfig.xml.
+The About section of "collex" and the News section of "collex" are two separate WordPress installations. The
+recommended theme to use is in the "collex_wordpress_theme" project.
 
-By default, start.jar starts Solr in Jetty using the default solr home
-directory of "./solr/" -- To run other example configurations, you can
-speciy the solr.solr.home system property when starting jetty...
+--------------------------------------
 
-  java -Dsolr.solr.home=multicore -jar start.jar
-  java -Dsolr.solr.home=example-DIH -jar start.jar
+To run on the production machine, you will probably want to create a service, something like
+the following:
+
+--------------------------------------
+#!/bin/sh
+
+# Starts, stops, and restarts Apache Solr.
+#
+# chkconfig: 35 92 08
+# description: Starts and stops Apache Solr
+
+SOLR_DIR="/path/to/solr"
+JAVA_OPTIONS="-Djetty.port=8983 -DSTOP.PORT=8078 -DSTOP.KEY=mustard -jar start.jar"
+JAVA="/usr/bin/java"
+
+case $1 in
+    start)
+        echo "Starting Solr"
+        cd $SOLR_DIR
+        $JAVA $JAVA_OPTIONS &
+        ;;
+    stop)
+        echo "Stopping Solr"
+        cd $SOLR_DIR
+        $JAVA $JAVA_OPTIONS --stop
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}" >&2
+        exit 1
+        ;;
+esac
+--------------------------------------
+
+In CentOS, save the above as /etc/rc.d/init.d/solr. The details may be different for your
+OS and installation.
+
+Then, to run solr:
+
+	sudo /sbin/service solr start
+
+When the server reboots, this project will restart automatically.
+
+To run on a development machine, you can start and stop it from the Collex Catalog folder by
+typing the following:
+
+	rake solr:start
+	rake solr:stop
 
