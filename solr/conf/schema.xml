@@ -577,6 +577,7 @@
     <field name="language" type="string" indexed="true" stored="true"/>
     <field name="geospacial" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="typewright" type="boolean" indexed="true" stored="true"/>
+    <field name="provenance" type="text_general" indexed="true" stored="true" multiValued="true"/>
 
     <!-- fields for sorting -->
     <field name="title_sort" type="alphaOnlySort" indexed="true" stored="true"/>
@@ -613,6 +614,7 @@
  <copyField source="source" dest="content"/>
  <copyField source="role_*" dest="content"/>
  <copyField source="text" dest="content"/>
+ <copyField source="provenance" dest="content"/>
 
 	<copyField source="title" dest="content_ascii"/>
 	<copyField source="alternative" dest="content_ascii"/>
@@ -621,6 +623,7 @@
 	<copyField source="source" dest="content_ascii"/>
 	<copyField source="role_*" dest="content_ascii"/>
 	<copyField source="text" dest="content_ascii"/>
+  <copyField source="provenance" dest="content_ascii"/>
 
 	<copyField source="title" dest="title_ascii"/>
 	<copyField source="role_AUT" dest="author_ascii"/>
