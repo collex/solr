@@ -554,6 +554,7 @@
     <field name="editor" type="text_general" indexed="true" stored="false" multiValued="true"/>
     <field name="freeculture" type="boolean" indexed="true" stored="true"/>
     <field name="genre" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="subject" type="text_general" indexed="true" stored="true" multiValued="true"/>
     <field name="image" type="string" indexed="false" stored="true"/>
     <field name="publisher" type="text_general" indexed="true" stored="false" multiValued="true"/>
     <dynamicField name="role_*" type="string" indexed="true" stored="true" multiValued="true"/>
@@ -617,6 +618,7 @@
  <copyField source="text" dest="content"/>
  <copyField source="provenance" dest="content"/>
  <copyField source="discipline" dest="content"/>
+ <copyField source="subject" dest="content"/>
 
 	<copyField source="title" dest="content_ascii"/>
 	<copyField source="alternative" dest="content_ascii"/>
@@ -627,6 +629,7 @@
 	<copyField source="text" dest="content_ascii"/>
     <copyField source="provenance" dest="content_ascii"/>
     <copyField source="discipline" dest="content_ascii"/>
+    <copyField source="subject" dest="content_ascii"/>
 
 	<copyField source="title" dest="title_ascii"/>
 	<copyField source="role_AUT" dest="author_ascii"/>
