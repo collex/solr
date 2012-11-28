@@ -575,7 +575,7 @@
     <field name="federation" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="person" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="format" type="string" indexed="true" stored="true" multiValued="true"/>
-    <field name="language" type="string" indexed="true" stored="true"/>
+    <field name="language" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="geospacial" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="typewright" type="boolean" indexed="true" stored="true"/>
     <field name="provenance" type="text_general" indexed="true" stored="true" multiValued="true"/>
