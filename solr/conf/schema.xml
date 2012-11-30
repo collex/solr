@@ -570,6 +570,7 @@
     <field name="source_sgml" type="string" indexed="true" stored="true"/>
     <field name="year" type="string" indexed="true" stored="true" multiValued="true"/>
 
+    <field name="doc_type" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="has_full_text" type="boolean" indexed="true" stored="true"/>
     <field name="is_ocr" type="boolean" indexed="true" stored="true"/>
     <field name="federation" type="string" indexed="true" stored="true" multiValued="true"/>
