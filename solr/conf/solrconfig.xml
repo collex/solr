@@ -35,7 +35,27 @@
        will cause a serious error to be logged if it can't be loaded.
     -->
 
-  <!-- <indexConfig> section could go here, but we want the defaults -->
+  <indexConfig>
+    <useCompoundFile>false</useCompoundFile>
+
+    <mergeFactor>10</mergeFactor>
+    <!-- Sets the amount of RAM that may be used by Lucene indexing
+         for buffering added documents and deletions before they are
+         flushed to the Directory.  -->
+    <ramBufferSizeMB>32</ramBufferSizeMB>
+    <!-- If both ramBufferSizeMB and maxBufferedDocs is set, then
+         Lucene will flush based on whichever limit is hit first.
+      -->
+    <!-- <maxBufferedDocs>1000</maxBufferedDocs> -->
+
+    <!-- ADD THIS TO SEARCH FULL DOC CONTENT -->
+    <maxFieldLength>2147483647</maxFieldLength>
+    <writeLockTimeout>1000</writeLockTimeout>
+    <commitLockTimeout>10000</commitLockTimeout>
+
+    <lockType>native</lockType>
+
+  </indexConfig>
   
   <abortOnConfigurationError>${solr.abortOnConfigurationError:true}</abortOnConfigurationError>
   
