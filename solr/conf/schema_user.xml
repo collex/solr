@@ -66,6 +66,9 @@
        org.apache.solr.analysis package.
     -->
 
+   <!-- Mandatory -->
+   <field name="_version_" type="long" indexed="true" stored="true"/>
+
     <!-- The StrField type is not analyzed, but indexed/stored verbatim. -->
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true"/>
 
