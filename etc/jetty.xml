@@ -25,7 +25,7 @@
       <!-- Default queued blocking threadpool -->
       <New class="org.eclipse.jetty.util.thread.QueuedThreadPool">
         <Set name="minThreads">10</Set>
-        <Set name="maxThreads">200</Set>
+        <Set name="maxThreads">10000</Set>
         <Set name="detailedDump">false</Set>
       </New>
     </Set>
@@ -59,8 +59,8 @@
           <New class="org.eclipse.jetty.server.bio.SocketConnector">
             <Set name="host"><SystemProperty name="jetty.host" /></Set>
             <Set name="port"><SystemProperty name="jetty.port" default="8983"/></Set>
-            <Set name="maxIdleTime">300000</Set>
-	    	<Set name="lowResourcesMaxIdleTime">5000</Set>
+            <Set name="maxIdleTime">50000</Set>
+            <Set name="lowResourceMaxIdleTime">1500</Set>
             <Set name="statsOn">false</Set>
           </New>
       </Arg>
@@ -118,8 +118,8 @@
     <!-- extra options                                               -->
     <!-- =========================================================== -->
     <Set name="stopAtShutdown">true</Set>
-    <Set name="sendServerVersion">true</Set>
-    <Set name="sendDateHeader">true</Set>
+    <Set name="sendServerVersion">false</Set>
+    <Set name="sendDateHeader">false</Set>
     <Set name="gracefulShutdown">1000</Set>
     <Set name="dumpAfterStart">false</Set>
     <Set name="dumpBeforeStop">false</Set>

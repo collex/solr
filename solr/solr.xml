@@ -1,119 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <solr persistent="true">
-  <cores defaultCoreName="resources" adminPath="/admin/cores" zkClientTimeout="${zkClientTimeout:15000}" hostPort="8983" hostContext="solr">
-    <core schema="schema_user.xml" instanceDir="./" name="UserContent"/>
-    <core schema="schema_user.xml" instanceDir="./" name="18thConnectLocalContent"/>
-    <core schema="schema_user.xml" instanceDir="./" name="NINESLocalContent"/>
-    <core schema="schema_user.xml" instanceDir="./" name="MESALocalContent"/>
-    <core schema="schema_user.xml" instanceDir="./" name="test18thConnectLocalContent"/>
-    <core schema="schema_user.xml" instanceDir="./" name="testNINESLocalContent"/>
-    <core schema="schema_user.xml" instanceDir="./" name="testMESALocalContent"/>
-    <core instanceDir="./" name="testResources"/>
-    <core instanceDir="./" name="resources"/>
-    <core instanceDir="./" name="archive_walters"/>
-    <core instanceDir="./" name="archive_EEBO"/>
-    <core instanceDir="./" name="archive_branch"/>
-    <core instanceDir="./" name="archive_TEST_RDF"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_nineteen" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_Pfaffs" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_ravon" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_ron" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_WrightAmFic" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_bierce" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_blake" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_bwrp" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_cather" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_cbw" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_chesnutt" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_dickinson" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_goslartograsmere" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_leighhunt" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_lewisandclark" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_locPrints" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_locEphemera" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_morrisedition" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_poetess" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_orlando" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_yellow_nineties_online" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_evfl" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_whistler" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_nypl" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_nyplvictoria" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_rc_praxis" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_rc_editions" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_rc_resources" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_rossetti" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_rotunda_arnold" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_rotunda_dickinson" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_rotunda_emilyshore" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_rotunda_c-rossetti" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_Last_Minstrel" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_swinburne" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_rotunda_typee" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_amdlitmanberg" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_ncaw" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_livingstone" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_duniway" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexAquinas" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexAugustine" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexAugustineLa" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexAbelardLa" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexAnselm" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexAustenWorksLetters" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexBaillieLetters" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexBritishPhilosophy" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexBronteLetters" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexBrowning" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexColeridge" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexDarwin" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexDickens" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexEdgeworth" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexEliot" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexEmersonJournals" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexEmersonLectures" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexEmersonCollectedWorks" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexGladstone" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexHardy" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexLamb" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexLewes" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexMarx" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexNewman" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexRomanticAge" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexShelleyJournals" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexShelleyWorks" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexWilliamJames" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexWilliamJamesCorrespondence" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexTennyson" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_intelexWordsworth" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_locCommonsBain" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_locCommonsCW" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_fieldCommons" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_eastmanCommons" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_mopaCommons" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_brooklynCommons" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_smuCommons" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_POP" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_lbt" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-al" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-alh" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-cal" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-edj" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-elh" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-elt" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-hjr" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-jaf" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-jvc" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-leg" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-nlh" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-rom" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-sel" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-vic" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-vp" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_muse-vpr" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_uflBaldwin" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_ufldloc" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_UVaPress_VLCS" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_jstorTrollopian" config="solrconfig.xml"/>
-    <core schema="schema.xml" instanceDir="./" name="archive_jstorAmerLit" config="solrconfig.xml"/>
+  <cores defaultCoreName="resources" adminPath="/admin/cores" zkClientTimeout="${zkClientTimeout:15000}" hostPort="${jetty.port:}" hostContext="solr">
+    <core instanceDir="local/" name="18thConnectLocalContent" dataDir="18thConnectLocalContent"/>
+    <core instanceDir="local/" name="NINESLocalContent" dataDir="NINESLocalContent"/>
+    <core instanceDir="local/" name="MESALocalContent" dataDir="MESALocalContent"/>
+    <core instanceDir="local/" name="test18thConnectLocalContent" dataDir="test18thConnectLocalContent"/>
+    <core instanceDir="local/" name="testNINESLocalContent" dataDir="testNINESLocalContent"/>
+    <core instanceDir="local/" name="testMESALocalContent" dataDir="testMESALocalContent"/>
+    <core instanceDir="resources/" name="testResources" dataDir="testResources"/>
+    <core instanceDir="resources/" name="resources" dataDir="resources"/>
   </cores>
 </solr>
