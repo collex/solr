@@ -7,7 +7,7 @@
     <core instanceDir="local/" name="test18thConnectLocalContent" dataDir="test18thConnectLocalContent"/>
     <core instanceDir="local/" name="testNINESLocalContent" dataDir="testNINESLocalContent"/>
     <core instanceDir="local/" name="testMESALocalContent" dataDir="testMESALocalContent"/>
-    <core instanceDir="resources/" name="testResources" dataDir="testResources"/>
-    <core instanceDir="resources/" name="resources" dataDir="resources"/>
+    <core instanceDir="archives/" name="testResources" dataDir="testResources"/>
+    <core instanceDir="archives/" name="resources" dataDir="resources"/>
   </cores>
 </solr>

@@ -1,8 +1,8 @@
 .DS_Store
 /logs/*
 /.idea/
-/solr/resources/resources/*
-/solr/resources/testResources/*
+/solr/archives/resources/*
+/solr/archives/testResources/*
 /solr/local/*LocalContent/*
 /solr/archives/archive_*/*
 
