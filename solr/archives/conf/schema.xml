@@ -151,6 +151,9 @@
 		<field name="provenance" type="text_general" indexed="true" stored="true" multiValued="true"/>
 		<field name="discipline" type="string" indexed="true" stored="true" multiValued="true"/>
 
+        <!-- meta fields -->
+        <field name="role" type="string" indexed="true" stored="false" multiValued="true"/>
+
 		<!-- fields for sorting -->
 		<field name="title_sort" type="alphaOnlySort" indexed="true" stored="true"/>
 		<field name="author_sort" type="alphaOnlySort" indexed="true" stored="true"/>
