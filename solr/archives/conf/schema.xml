@@ -224,10 +224,10 @@
 	<copyField source="role_PBL" dest="publisher_ascii"/>
 
 
-	<!-- Above, multiple source fields are copied to the [text] field.
-		  Another way to map multiple source fields to the same
-		  destination field is to use the dynamic field syntax.
-		  copyField also supports a maxChars to copy setting.  -->
+   <!-- Above, multiple source fields are copied to the [text] field. 
+	  Another way to map multiple source fields to the same 
+	  destination field is to use the dynamic field syntax. 
+	  copyField also supports a maxChars to copy setting.  -->
 	   
    <!-- <copyField source="*_t" dest="text" maxChars="3000"/> -->
 
@@ -502,9 +502,9 @@
 			  <!-- Optionally you may want to use this less aggressive stemmer instead of PorterStemFilterFactory:
 				<filter class="solr.EnglishMinimalStemFilterFactory"/>
 			-->
-			  <filter class="solr.PorterStemFilterFactory"/>
-		  </analyzer>
-	  </fieldType>
+        <filter class="solr.PorterStemFilterFactory"/>
+      </analyzer>
+    </fieldType>
 
     <!-- A text field with defaults appropriate for English, plus
 	 aggressive word-splitting and autophrase features enabled.
