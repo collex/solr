@@ -636,6 +636,9 @@
              input string is preserved as a single token
           -->
         <tokenizer class="solr.KeywordTokenizerFactory"/>
+	      <!-- ASCII Folding will get rid of the diacriticals.
+					-->
+	      <filter class="solr.ASCIIFoldingFilterFactory"/>
         <!-- The LowerCase TokenFilter does what you expect, which can be
              when you want your sorting to be case insensitive
           -->
@@ -654,7 +657,7 @@
              http://java.sun.com/j2se/1.6.0/docs/api/java/util/regex/package-summary.html
           -->
         <filter class="solr.PatternReplaceFilterFactory"
-                pattern="([^a-z])" replacement="" replace="all"
+                pattern="([^a-z 0-9])" replacement="" replace="all"
         />
       </analyzer>
     </fieldType>
