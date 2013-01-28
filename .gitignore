@@ -5,4 +5,4 @@
 /solr/archives/testResources/*
 /solr/local/*LocalContent/*
 /solr/archives/archive_*/*
-
+/solr/solr.xml
