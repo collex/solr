@@ -106,6 +106,7 @@
 		<!-- catchall field, containing all other searchable text fields (implemented via copyField further on in this schema  -->
 		<field name="content" type="text_en" indexed="true" stored="false" multiValued="true"/>
 		<field name="content_ascii" type="text_en_ascii" indexed="true" stored="false" multiValued="true"/>
+      <field name="content_auto" type="text_auto" indexed="true" stored="false" multiValued="true"/>
 
 		<!-- fields for ascii search on specific fields -->
 		<field name="title_ascii" type="text_en_ascii" indexed="true" stored="false"/>
@@ -217,6 +218,17 @@
 	<copyField source="provenance" dest="content_ascii"/>
 	<copyField source="discipline" dest="content_ascii"/>
 	<copyField source="subject" dest="content_ascii"/>
+    
+   <copyField source="title" dest="content_auto"/>
+   <copyField source="alternative" dest="content_auto"/>
+   <copyField source="year" dest="content_auto"/>
+   <copyField source="date_label" dest="content_auto"/>
+   <copyField source="source" dest="content_auto"/>
+   <copyField source="role_*" dest="content_auto"/>
+   <copyField source="text" dest="content_auto"/>
+   <copyField source="provenance" dest="content_auto"/>
+   <copyField source="discipline" dest="content_auto"/>
+   <copyField source="subject" dest="content_auto"/>
 
 	<copyField source="title" dest="title_ascii"/>
 	<copyField source="role_AUT" dest="author_ascii"/>
@@ -461,6 +473,27 @@
         <filter class="solr.PorterStemFilterFactory"/>
       </analyzer>
     </fieldType>
+    
+   <fieldType name="text_auto" class="solr.TextField"  positionIncrementGap="100">
+      <analyzer type="index">
+         <tokenizer class="solr.StandardTokenizerFactory"/>
+         <filter class="solr.LowerCaseFilterFactory"/>
+         <filter class="solr.StopFilterFactory"
+                 ignoreCase="true"
+                 words="lang/stopwords_en.txt"
+                 enablePositionIncrements="true"
+              />
+      </analyzer>
+      <analyzer type="query">
+         <tokenizer class="solr.StandardTokenizerFactory"/>
+         <filter class="solr.LowerCaseFilterFactory"/>
+         <filter class="solr.StopFilterFactory"
+                 ignoreCase="true"
+                 words="lang/stopwords_en.txt"
+                 enablePositionIncrements="true"
+              />
+      </analyzer>
+   </fieldType>
 
 	  <!-- Just like text_en, except that it ignores diacriticals -->
 	  <fieldType name="text_en_ascii" class="solr.TextField" positionIncrementGap="100">
