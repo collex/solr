@@ -13,6 +13,45 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+Collex Solr Component 
+---------------------
+This is the solr component used by collex. It has customized configrations 
+that meet the needs of collex.
+
+After downloading, copy the file solr/solr.example.xml to solr/solr.xml.
+Customize etc/logging.properties to suit your needs.
+
+Solr should be run as a service on your target host. On linux-based hosts, add a
+solr file with contents similar to the snippet below to the /etc/init.d directory:
+
+SOLR_DIR="/home/arc/www/solr"
+JAVA_OPTIONS="-Xmx14144m -DSTOP.PORT=8079 -DSTOP.KEY=mustard -Djava.util.logging.config.file=etc/logging.properties -jar start.jar"
+JAVA="/usr/bin/java"
+
+case $1 in
+    start)
+        echo "Starting Solr"
+        cd $SOLR_DIR
+        $JAVA $JAVA_OPTIONS 2>$SOLR_DIR/logs/error.log 1>&2 &
+        ;;
+    stop)
+        echo "Stopping Solr"
+        cd $SOLR_DIR
+        $JAVA $JAVA_OPTIONS --stop
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}" >&2
+        exit 1
+        ;;
+esac
+
+
+
 Solr example
 ------------
 
