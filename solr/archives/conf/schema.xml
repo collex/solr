@@ -151,6 +151,8 @@
 		<field name="typewright" type="boolean" indexed="true" stored="true"/>
 		<field name="provenance" type="text_general" indexed="true" stored="true" multiValued="true"/>
 		<field name="discipline" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="hasPart" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="isPartOf" type="string" indexed="true" stored="true" multiValued="true"/>
 
         <!-- meta fields -->
         <field name="role" type="string" indexed="true" stored="false" multiValued="true"/>
