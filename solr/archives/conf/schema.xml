@@ -161,6 +161,8 @@
 		<field name="title_sort" type="alphaOnlySort" indexed="true" stored="true"/>
 		<field name="author_sort" type="alphaOnlySort" indexed="true" stored="true"/>
 		<field name="year_sort" type="alphaOnlySort" indexed="true" stored="true"/>
+        <field name="year_sort_asc" type="alphaOnlySort" indexed="true" stored="true"/>
+        <field name="year_sort_desc" type="alphaOnlySort" indexed="true" stored="true"/>
 
 		<!-- temp fields -->
 		<field name="type" type="string" indexed="true" stored="false"/>
