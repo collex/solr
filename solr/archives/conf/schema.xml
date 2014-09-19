@@ -139,6 +139,7 @@
 		<field name="source_html" type="string" indexed="true" stored="true"/>
 		<field name="source_sgml" type="string" indexed="true" stored="true"/>
 		<field name="year" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="decade" type="string" indexed="true" stored="true" multiValued="true"/>
 
 		<field name="doc_type" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="has_full_text" type="boolean" indexed="true" stored="true"/>
