@@ -5,4 +5,6 @@
 /solr/archives/testResources/*
 /solr/local/*LocalContent/*
 /solr/archives/archive_*/*
+/solr/pages/pages/*
+/solr/pages/*_Pages/*
 /solr/solr.xml

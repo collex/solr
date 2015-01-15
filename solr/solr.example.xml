@@ -52,5 +52,6 @@
 		<core instanceDir="local/" name="testMESALocalContent" dataDir="testMESALocalContent"/>
 		<core instanceDir="archives/" name="testResources" dataDir="testResources"/>
 		<core instanceDir="archives/" name="resources" dataDir="resources"/>
+      <core instanceDir="pages/" name="pages" dataDir="pages"/>
 	</cores>
 </solr>

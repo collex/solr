@@ -105,72 +105,15 @@
 
 		<!-- catchall field, containing all other searchable text fields (implemented via copyField further on in this schema  -->
 		<field name="content" type="text_en" indexed="true" stored="false" multiValued="true"/>
-		<field name="content_ascii" type="text_en_ascii" indexed="true" stored="false" multiValued="true"/>
+		<field name="content_ascii" type="text_en_ascii" indexed="true" stored="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true" />
       <field name="content_auto" type="text_auto" indexed="true" stored="false" multiValued="true"/>
 
-		<!-- fields for ascii search on specific fields -->
-		<field name="title_ascii" type="text_en_ascii" indexed="true" stored="false"/>
-		<field name="author_ascii" type="text_general_ascii" indexed="true" stored="false" multiValued="true"/>
-		<field name="editor_ascii" type="text_general_ascii" indexed="true" stored="false" multiValued="true"/>
-		<field name="publisher_ascii" type="text_general_ascii" indexed="true" stored="false" multiValued="true"/>
-
 		<!-- Object metadata -->
-		<field name="agent" type="string" indexed="true" stored="false" multiValued="true"/>
-		<field name="agent_facet" type="string" indexed="true" stored="false" multiValued="true"/>
-		<field name="alternative" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="archive" type="string" indexed="true" stored="true"/>
-		<field name="author" type="text_general" indexed="true" stored="false" multiValued="true"/>
-		<field name="date_label" type="string" indexed="false" stored="true" multiValued="true"/>
-		<field name="editor" type="text_general" indexed="true" stored="false" multiValued="true"/>
-		<field name="freeculture" type="boolean" indexed="true" stored="true"/>
-		<field name="genre" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="subject" type="text_en" indexed="true" stored="true" multiValued="true"/>
-		<field name="image" type="string" indexed="false" stored="true"/>
-		<field name="publisher" type="text_general" indexed="true" stored="false" multiValued="true"/>
-		<dynamicField name="role_*" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="source" type="string" indexed="true" stored="true" multiValued="true"/>
+		 <field name="archive" type="string" indexed="true" stored="true"/>
 		<field name="text" type="textgen" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true" />
-		<field name="text_url" type="string" indexed="false" stored="true" />
-		<field name="thumbnail" type="string" indexed="false" stored="true"/>
-		<!-- field name="title" type="text_general" indexed="true" stored="true"/ -->
-		<field name="title" type="text_general" indexed="true" stored="true"/>
-		<field name="url" type="string" indexed="true" stored="true"/>
-		<field name="source_xml" type="string" indexed="true" stored="true"/>
-		<field name="source_html" type="string" indexed="true" stored="true"/>
-		<field name="source_sgml" type="string" indexed="true" stored="true"/>
-		<field name="year" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="decade" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="quarter_century" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="half_century" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="century" type="string" indexed="true" stored="true" multiValued="true"/>
-
-		<field name="doc_type" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="has_pages" type="boolean" indexed="true" stored="true"/>
-		<field name="has_full_text" type="boolean" indexed="true" stored="true"/>
-		<field name="is_ocr" type="boolean" indexed="true" stored="true"/>
-		<field name="federation" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="person" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="format" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="language" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="geospacial" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="typewright" type="boolean" indexed="true" stored="true"/>
-		<field name="provenance" type="text_general" indexed="true" stored="true" multiValued="true"/>
-		<field name="discipline" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="hasPart" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="isPartOf" type="string" indexed="true" stored="true" multiValued="true"/>
-
-        <!-- meta fields -->
-        <field name="role" type="string" indexed="true" stored="false" multiValued="true"/>
-
-		<!-- fields for sorting -->
-		<field name="title_sort" type="alphaOnlySort" indexed="true" stored="true"/>
-		<field name="author_sort" type="alphaOnlySort" indexed="true" stored="true"/>
-		<field name="year_sort" type="alphaOnlySort" indexed="true" stored="true"/>
-        <field name="year_sort_asc" type="alphaOnlySort" indexed="true" stored="true"/>
-        <field name="year_sort_desc" type="alphaOnlySort" indexed="true" stored="true"/>
-
-		<!-- temp fields -->
-		<field name="type" type="string" indexed="true" stored="false"/>
+		<field name="page_num" type="int" indexed="true" stored="true"/>
+		<field name="page_of" type="string" indexed="false" stored="true"/>
+		
 		<field name="date_updated" type="string" indexed="true" stored="true"/>
 		<field name="date_created" type="string" indexed="true" stored="true"/>
    
@@ -200,50 +143,9 @@
   <!-- copyField commands copy one field to another at the time a document
         is added to the index.  It's used either to index the same field differently,
         or to add multiple fields to the same field for easier/faster searching.  -->
-	<copyField source="role_AUT" dest="author"/>
-	<copyField source="role_EDT" dest="editor"/>
-	<copyField source="role_PBL" dest="publisher"/>
-	<copyField source="role_*" dest="agent"/>
-	<copyField source="role_*" dest="agent_facet"/>
-
-	<copyField source="title" dest="content"/>
-	<copyField source="alternative" dest="content"/>
-	<copyField source="year" dest="content"/>
-	<copyField source="date_label" dest="content"/>
-	<copyField source="source" dest="content"/>
-	<copyField source="role_*" dest="content"/>
 	<copyField source="text" dest="content"/>
-	<copyField source="provenance" dest="content"/>
-	<copyField source="discipline" dest="content"/>
-	<copyField source="subject" dest="content"/>
-
-	<copyField source="title" dest="content_ascii"/>
-	<copyField source="alternative" dest="content_ascii"/>
-	<copyField source="year" dest="content_ascii"/>
-	<copyField source="date_label" dest="content_ascii"/>
-	<copyField source="source" dest="content_ascii"/>
-	<copyField source="role_*" dest="content_ascii"/>
 	<copyField source="text" dest="content_ascii"/>
-	<copyField source="provenance" dest="content_ascii"/>
-	<copyField source="discipline" dest="content_ascii"/>
-	<copyField source="subject" dest="content_ascii"/>
-    
-   <copyField source="title" dest="content_auto"/>
-   <copyField source="alternative" dest="content_auto"/>
-   <copyField source="year" dest="content_auto"/>
-   <copyField source="date_label" dest="content_auto"/>
-   <copyField source="source" dest="content_auto"/>
-   <copyField source="role_*" dest="content_auto"/>
    <copyField source="text" dest="content_auto"/>
-   <copyField source="provenance" dest="content_auto"/>
-   <copyField source="discipline" dest="content_auto"/>
-   <copyField source="subject" dest="content_auto"/>
-
-	<copyField source="title" dest="title_ascii"/>
-	<copyField source="role_AUT" dest="author_ascii"/>
-	<copyField source="role_EDT" dest="editor_ascii"/>
-	<copyField source="role_PBL" dest="publisher_ascii"/>
-
 
    <!-- Above, multiple source fields are copied to the [text] field. 
 	  Another way to map multiple source fields to the same 

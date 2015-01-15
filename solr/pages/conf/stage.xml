@@ -139,13 +139,8 @@
 		<field name="source_html" type="string" indexed="true" stored="true"/>
 		<field name="source_sgml" type="string" indexed="true" stored="true"/>
 		<field name="year" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="decade" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="quarter_century" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="half_century" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="century" type="string" indexed="true" stored="true" multiValued="true"/>
 
 		<field name="doc_type" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="has_pages" type="boolean" indexed="true" stored="true"/>
 		<field name="has_full_text" type="boolean" indexed="true" stored="true"/>
 		<field name="is_ocr" type="boolean" indexed="true" stored="true"/>
 		<field name="federation" type="string" indexed="true" stored="true" multiValued="true"/>
@@ -156,8 +151,6 @@
 		<field name="typewright" type="boolean" indexed="true" stored="true"/>
 		<field name="provenance" type="text_general" indexed="true" stored="true" multiValued="true"/>
 		<field name="discipline" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="hasPart" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="isPartOf" type="string" indexed="true" stored="true" multiValued="true"/>
 
         <!-- meta fields -->
         <field name="role" type="string" indexed="true" stored="false" multiValued="true"/>
@@ -166,8 +159,6 @@
 		<field name="title_sort" type="alphaOnlySort" indexed="true" stored="true"/>
 		<field name="author_sort" type="alphaOnlySort" indexed="true" stored="true"/>
 		<field name="year_sort" type="alphaOnlySort" indexed="true" stored="true"/>
-        <field name="year_sort_asc" type="alphaOnlySort" indexed="true" stored="true"/>
-        <field name="year_sort_desc" type="alphaOnlySort" indexed="true" stored="true"/>
 
 		<!-- temp fields -->
 		<field name="type" type="string" indexed="true" stored="false"/>
