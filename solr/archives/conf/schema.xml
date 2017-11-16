@@ -128,7 +128,7 @@
 		<field name="subject" type="text_en" indexed="true" stored="true" multiValued="true"/>
 		<field name="image" type="string" indexed="false" stored="true"/>
 		<field name="publisher" type="text_general" indexed="true" stored="false" multiValued="true"/>
-		<dynamicField name="role_*" type="string" indexed="true" stored="true" multiValued="true"/>
+		<dynamicField name="role_*" type="text_general" indexed="true" stored="true" multiValued="true"/>
 		<field name="source" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="text" type="textgen" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true" />
 		<field name="text_url" type="string" indexed="false" stored="true" />
