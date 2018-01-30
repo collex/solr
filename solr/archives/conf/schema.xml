@@ -167,7 +167,9 @@
     <field name="coverage" type="text_general" indexed="true" stored="true" multiValued="true"/>
     <field name="description" type="text_en" indexed="true" stored="true" multiValued="true"/>
     <field name="reviewdate" type="string" indexed="true" stored="true" multiValued="true"/>
-
+    <field name="publication_country" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="publication_state" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="publication_city" type="string" indexed="true" stored="true" multiValued="true"/>
 
         <!-- meta fields -->
         <field name="role" type="string" indexed="true" stored="false" multiValued="true"/>
